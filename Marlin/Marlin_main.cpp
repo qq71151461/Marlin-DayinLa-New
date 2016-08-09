@@ -3437,6 +3437,7 @@ Sigma_Exit:
             }
           }
         }
+        break;
   case 253: // M253 Pause print Resume print
   {
     int i = 0;
@@ -3478,8 +3479,9 @@ Sigma_Exit:
       SERIAL_PROTOCOLLN("");
       
     }
-  break;
+  
   }
+  break;
   case 254:  // M254 Get homeing
     if(code_seen('T')){
       switch(cmdbuffer[bufindr][strchr_pointer - cmdbuffer[bufindr] + 1]){
@@ -3501,6 +3503,7 @@ Sigma_Exit:
           break;
       }
     }
+    break;
 #endif  
 
     #ifdef PREVENT_DANGEROUS_EXTRUDE
