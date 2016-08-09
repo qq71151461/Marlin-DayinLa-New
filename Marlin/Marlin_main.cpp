@@ -3423,7 +3423,6 @@ Sigma_Exit:
     MYSERIAL.print(ICEMAN3D);
     MYSERIAL.print(" S");
     MYSERIAL.println(VERSION_STRING);
-    return;
   break;
         case 249:  //led
         {
@@ -3437,7 +3436,6 @@ Sigma_Exit:
               analogWrite(LED_TIP_PIN, brightness);
             }
           }
-          return;
         }
   case 253: // M253 Pause print Resume print
   {
@@ -3480,7 +3478,6 @@ Sigma_Exit:
       SERIAL_PROTOCOLLN("");
       
     }
-    return;
   break;
   }
   case 254:  // M254 Get homeing
@@ -3504,7 +3501,6 @@ Sigma_Exit:
           break;
       }
     }
-    return;
 #endif  
 
     #ifdef PREVENT_DANGEROUS_EXTRUDE
