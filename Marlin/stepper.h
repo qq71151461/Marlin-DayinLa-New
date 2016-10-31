@@ -40,8 +40,15 @@
   #endif  
 #else
   #define WRITE_E_STEP(v) WRITE(E0_STEP_PIN, v)
-  #define NORM_E_DIR() WRITE(E0_DIR_PIN, !INVERT_E0_DIR)
-  #define REV_E_DIR() WRITE(E0_DIR_PIN, INVERT_E0_DIR)
+
+	#ifdef ICEMAN3D
+			#define NORM_E_DIR() WRITE(E0_DIR_PIN, !invert_dir[E_AXIS])
+			#define REV_E_DIR() WRITE(E0_DIR_PIN, invert_dir[E_AXIS])
+	#else
+			#define NORM_E_DIR() WRITE(E0_DIR_PIN, !INVERT_E0_DIR)
+			#define REV_E_DIR() WRITE(E0_DIR_PIN, INVERT_E0_DIR)
+	#endif
+  
 #endif
 
 #ifdef ABORT_ON_ENDSTOP_HIT_FEATURE_ENABLED
